@@ -1,2 +1,2 @@
 # BetterGenshinLauncher
-*BetterVersion
+*BetterVersion*
