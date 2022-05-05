@@ -87,24 +87,26 @@ namespace GenshinPublic
     }
     public partial class MainWindow : Window
     {
-        
+
+
+        public static IniFile ini;
         public MainWindow()
         {
+            //設定ファイルの処理
             if(File.Exists(System.AppDomain.CurrentDomain.BaseDirectory + @"\settings.ini"))
             {
-
+                ini = new IniFile(System.AppDomain.CurrentDomain.BaseDirectory + @"\settings.ini");
             }
-
-              else
-                    {
-                File.Create(System.AppDomain.CurrentDomain.BaseDirectory + @"\settings.ini");
-                var ini = new IniFile(System.AppDomain.CurrentDomain.BaseDirectory + @"\settings.ini");
+            else
+                   {
+                ini = new IniFile(System.AppDomain.CurrentDomain.BaseDirectory + @"\settings.ini");
                 ini.WriteString("Genshin", "Path", @"C:\Program Files\Genshin Impact\Genshin Impact game\GenshinImpact.exe");
-                ini.GetString("Genshin", "Senden", "True");
+                ini.WriteString("Genshin", "Senden", "True");
+                
 
             }
-            var ini2 = new IniFile(System.AppDomain.CurrentDomain.BaseDirectory + @"\settings.ini");
-            string senden  = ini2.GetString("Genshin", "Senden", "True");
+         
+            string senden  = ini.GetString("Genshin", "Senden", "True");
             if (senden == "True" || senden == "true")
             {
                 System.Diagnostics.Process.Start("https://discord.gg/bYEV8QPUtW");
@@ -112,10 +114,10 @@ namespace GenshinPublic
               
                 
             }
-           
+           //GUIの読み込み
             InitializeComponent();
             
-            genshinpath.Text =  ini2.GetString("Genshin", "Path", @"C:\Program Files\Genshin Impact\Genshin Impact game\GenshinImpact.exe");
+            genshinpath.Text =  ini.GetString("Genshin", "Path", @"C:\Program Files\Genshin Impact\Genshin Impact game\GenshinImpact.exe");
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -125,6 +127,7 @@ namespace GenshinPublic
       
         private void genshinrun_Click(object sender, RoutedEventArgs e)
         {
+            //セットアップ
             
             var genshin = new System.Diagnostics.Process();
             string path = genshinpath.Text;
@@ -132,11 +135,12 @@ namespace GenshinPublic
             {
                 return;
             }
-            var ini3 = new IniFile(System.AppDomain.CurrentDomain.BaseDirectory + @"\settings.ini");
+       
             genshin.StartInfo.FileName = @path;
-            ini3.WriteString("Genshin", "Path", path);
+            ini.WriteString("Genshin", "Path", path);
             try
             {
+               //原神を起動
                 genshin.Start();
 
             }
@@ -170,17 +174,25 @@ namespace GenshinPublic
             }
         }
 
-  /*      private void userdata_TextChanged(object sender, TextChangedEventArgs e)
+        private void updatecheck_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void getuser_Click(object sender, RoutedEventArgs e)
-        {
-            RegistryKey key = Registry.LocalMachine.OpenSubKey(@"HKEY_CURRENT_USER\Software\miHoYo\Genshin Impact");
-            var data = key.GetValue("GENERAL_DATA_h2389025596");
-              userdata.Text = (string)data;
-            key.Close();
-        }
-   */ }
+     
+
+        /*      private void userdata_TextChanged(object sender, TextChangedEventArgs e)
+              {
+
+              }
+
+              private void getuser_Click(object sender, RoutedEventArgs e)
+              {
+                  RegistryKey key = Registry.LocalMachine.OpenSubKey(@"HKEY_CURRENT_USER\Software\miHoYo\Genshin Impact");
+                  var data = key.GetValue("GENERAL_DATA_h2389025596");
+                    userdata.Text = (string)data;
+                  key.Close();
+              }
+         */
+    }
     }
