@@ -1,2 +1,4 @@
 # BetterGenshinLauncher
-*Betterlauncher*
+Free
+# Next Update
+アプデ内容、思いつきません
