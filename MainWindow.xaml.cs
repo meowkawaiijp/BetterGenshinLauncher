@@ -109,7 +109,7 @@ namespace GenshinPublic
             string senden  = ini.GetString("Genshin", "Senden", "True");
             if (senden == "True" || senden == "true")
             {
-                System.Diagnostics.Process.Start("https://discord.gg/bYEV8QPUtW");
+                System.Diagnostics.Process.Start("https://twitter.com/alpha_korona");
                 System.Diagnostics.Process.Start("https://github.com/alphaikaduki");
               
                 
@@ -176,23 +176,28 @@ namespace GenshinPublic
 
         private void updatecheck_Click(object sender, RoutedEventArgs e)
         {
-
+            System.Diagnostics.Process.Start("https://act.hoyolab.com/ys/app/interactive-map/index.html?lang=ja-jp#");
         }
 
-     
+        private void ikusei_syoukai_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://enka.shinshin.moe/");
+        }
+  
 
-        /*      private void userdata_TextChanged(object sender, TextChangedEventArgs e)
-              {
 
-              }
+    /*      private void userdata_TextChanged(object sender, TextChangedEventArgs e)
+          {
 
-              private void getuser_Click(object sender, RoutedEventArgs e)
-              {
-                  RegistryKey key = Registry.LocalMachine.OpenSubKey(@"HKEY_CURRENT_USER\Software\miHoYo\Genshin Impact");
-                  var data = key.GetValue("GENERAL_DATA_h2389025596");
-                    userdata.Text = (string)data;
-                  key.Close();
-              }
-         */
-    }
+          }
+
+          private void getuser_Click(object sender, RoutedEventArgs e)
+          {
+              RegistryKey key = Registry.LocalMachine.OpenSubKey(@"HKEY_CURRENT_USER\Software\miHoYo\Genshin Impact");
+              var data = key.GetValue("GENERAL_DATA_h2389025596");
+                userdata.Text = (string)data;
+              key.Close();
+          }
+     */
+}
     }
