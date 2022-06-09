@@ -186,18 +186,31 @@ namespace GenshinPublic
   
 
 
-    /*      private void userdata_TextChanged(object sender, TextChangedEventArgs e)
+          private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
           {
 
           }
 
-          private void getuser_Click(object sender, RoutedEventArgs e)
-          {
-              RegistryKey key = Registry.LocalMachine.OpenSubKey(@"HKEY_CURRENT_USER\Software\miHoYo\Genshin Impact");
-              var data = key.GetValue("GENERAL_DATA_h2389025596");
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64);
+                RegistryKey key = hklm.OpenSubKey(@"HKEY_CURRENT_USER\SOFTWARE\miHoYo\Genshin Impact");
+                var data = key.GetValue("GENERAL_DATA_h2389025596");
                 userdata.Text = (string)data;
-              key.Close();
-          }
-     */
-}
+                key.Close();
+            }
+            catch
+            {
+
+            }
+            }
+
+        private void userdata_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+    }
     }

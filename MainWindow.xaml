@@ -5,22 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GenshinPublic"
         mc:Ignorable="d"
-        Title="BetterGenshin" Height="359.254" Width="683.149">
+        Title="BetterGenshinLauncher" Height="359.254" Width="683.149" Cursor="None" FontWeight="Bold" WindowState="Normal" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="37*"/>
-            <ColumnDefinition Width="11*"/>
-            <ColumnDefinition Width="6*"/>
-            <ColumnDefinition Width="79*"/>
-            <ColumnDefinition Width="420*"/>
-            <ColumnDefinition Width="195*"/>
-            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition Width="16*"/>
+            <ColumnDefinition Width="31*"/>
+            <ColumnDefinition Width="92*"/>
+            <ColumnDefinition Width="271*"/>
+            <ColumnDefinition Width="168*"/>
+            <ColumnDefinition Width="38*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="genshinrun" Content="起動" HorizontalAlignment="Left" Margin="10,234,0,0" VerticalAlignment="Top" Width="212" Click="genshinrun_Click" Height="69" Grid.ColumnSpan="5"/>
-        <TextBox x:Name="genshinpath" HorizontalAlignment="Left" Height="29" Margin="10,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="5"/>
-        <Label Content="原神の実行ファイルのパス" HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.037,-0.537" Width="244" Height="29" Grid.ColumnSpan="5"/>
-        <Button x:Name="rogubo" Content="ログインボーナスのサイトに移行" HorizontalAlignment="Left" Margin="10,191,0,0" VerticalAlignment="Top" Width="174" Height="38" Click="rogubo_Click" Grid.ColumnSpan="5"/>
-        <Button x:Name="read" Content="ファイル読み込み" Grid.Column="4" HorizontalAlignment="Left" Margin="136,162,0,0" VerticalAlignment="Top" Width="86" Height="29" Click="read_Click"/>
+        <Button x:Name="genshinrun" Content="起動" HorizontalAlignment="Left" Margin="16,91,0,0" VerticalAlignment="Top" Width="212" Click="genshinrun_Click" Height="69" Grid.ColumnSpan="8"/>
+        <TextBox x:Name="genshinpath" HorizontalAlignment="Left" Height="40" Margin="90,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2" Grid.Column="7"/>
+        <Label Content="原神の実行ファイルのパス" HorizontalAlignment="Left" Margin="210,14,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.037,-0.537" Width="170" Height="29" Grid.ColumnSpan="2" Grid.Column="7" FontSize="15"/>
+        <Button x:Name="rogubo" Content="ログインボーナスサイト" HorizontalAlignment="Left" Margin="16,52,0,0" VerticalAlignment="Top" Width="106" Height="26" Click="rogubo_Click" Grid.ColumnSpan="7" RenderTransformOrigin="0.515,0.699"/>
+        <Button x:Name="read" Content="ファイル読み込み" Grid.Column="7" HorizontalAlignment="Left" Margin="90,15,0,0" VerticalAlignment="Top" Width="115" Height="29" Click="read_Click"/>
+        <Button x:Name="mapopen" Content="テイワットマップサイト" Grid.Column="6" HorizontalAlignment="Left" Margin="13,24,0,0" VerticalAlignment="Top" Width="111" Height="23" Click="updatecheck_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="ikusei_syoukai" Content="ビルド紹介サイト" HorizontalAlignment="Left" Margin="16,24,0,0" VerticalAlignment="Top" Grid.ColumnSpan="7" Width="106" Height="23" Click="ikusei_syoukai_Click"/>
+        <Button x:Name="getuser" Content="ユーザーの情報を取得" Grid.Column="6" HorizontalAlignment="Left" Margin="16,55,0,0" VerticalAlignment="Top" Width="108" Height="23" Grid.ColumnSpan="2" Click="Button_Click"/>
+        <TextBox x:Name="userdata" Grid.Column="7" HorizontalAlignment="Left" Height="187" Margin="90,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334" Grid.ColumnSpan="2" TextChanged="userdata_TextChanged"/>
 
     </Grid>
 </Window>
